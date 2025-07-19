@@ -1,28 +1,24 @@
+// App.js
+// Root entry point of the React Native app
+// Author: Roopam
+// Created: Saturday, July 19, 2025
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native'; // Handles navigation tree/state
+import AppNavigator from './src/navigation/AppNavigator';      // Main app navigation structure
+
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
+ * Main application component.
+ * Wraps navigators with the NavigationContainer.
  */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    // NavigationContainer manages navigation tree and transitions
+    <NavigationContainer>
+      {/* AppNavigator defines all routes and screen structures */}
+      <AppNavigator />
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
