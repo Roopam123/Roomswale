@@ -3,12 +3,12 @@ import React from 'react'
 
 type Props = {}
 
-const Splace = (props: Props) => {
+const AppWellcome = (props: Props) => {
     return (
         <View>
-            <Text>Splace</Text>
+            <Text>AppWellcome</Text>
         </View>
     )
 }
 
-export default Splace;
+export default AppWellcome;
