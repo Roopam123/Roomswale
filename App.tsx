@@ -4,20 +4,26 @@
 // Created: Saturday, July 19, 2025
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'; // Handles navigation tree/state
-import AppNavigator from './src/navigation/AppNavigator';      // Main app navigation structure
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './src/navigation/AppNavigator';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar, StyleSheet } from 'react-native';
+import { Colors } from './src/utils/constent';
+import { styles } from './App.Styles';
 
-/**
- * Main application component.
- * Wraps navigators with the NavigationContainer.
- */
 const App = () => {
   return (
-    // NavigationContainer manages navigation tree and transitions
-    <NavigationContainer>
-      {/* AppNavigator defines all routes and screen structures */}
-      <AppNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={Colors.primary}
+      />
+      <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

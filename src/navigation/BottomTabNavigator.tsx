@@ -14,11 +14,11 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Importing screen components for each tab
-import Home from '../screens/Home/Home';
-import Chats from '../screens/Chats/Chats';
-import Rent from '../screens/Rent/Rent';
-import MyAds from '../screens/MyAds/MyAds';
-import Profile from '../screens/Profile/Profile';
+import Home from '../screens/Pages/Home/Home';
+import Chats from '../screens/Pages/Chats/Chats';
+import Rent from '../screens/Pages/Rent/Rent';
+import MyAds from '../screens/Pages/MyAds/MyAds';
+import Profile from '../screens/Pages/Profile/Profile';
 
 // Create a bottom tab navigator instance
 const Tab = createBottomTabNavigator();
