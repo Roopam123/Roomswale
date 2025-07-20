@@ -1,11 +1,16 @@
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 type Props = {}
 
 const IntroOne = (props: Props) => {
     return (
-        <div>Intro-one</div>
+        <View>
+            <Text>Intro-one</Text>
+        </View>
     )
 }
 
-export default IntroOne;
+export default IntroOne
+
+const styles = StyleSheet.create({})

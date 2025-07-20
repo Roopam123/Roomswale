@@ -1,14 +1,25 @@
-import { Text, View } from 'react-native'
-import React from 'react'
+// Splace.tsx
+import React, { useEffect } from 'react';
+import { View, StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { styles } from './Splace.Styles';
 
-type Props = {}
+const Splace = () => {
+    const navigation: any = useNavigation();
 
-const Splace = (props: Props) => {
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            navigation.navigate('Wellcome');
+        }, 3000);
+
+        return () => clearTimeout(timeout);
+    }, [navigation]);
+
     return (
-        <View>
-            <Text>Splace</Text>
+        <View style={styles.container}>
+            <StatusBar backgroundColor="#9c42a9" barStyle="light-content" />
         </View>
-    )
-}
+    );
+};
 
 export default Splace;

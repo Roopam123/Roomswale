@@ -1,19 +1,8 @@
-/**
- * AppNavigator.js
- *
- * Description:
- *   This is the root stack navigator for the app.
- *   It handles authentication, onboarding, and the main tab-based layout.
- *   All screens are organized here, with optional transitions and header settings.
- *
- * Author: Roopam
- * Created: Saturday, July 19, 2025
- */
-
+// AppNavigator.tsx
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// Auth and Onboarding Screens
+// Auth & Onboarding Screens
 import Splace from '../screens/Auth/Splace/Splace';
 import AppWellcome from '../screens/Auth/AppWellcome/AppWellcome';
 import IntroOne from '../screens/Auth/Intro-One/Intro-one';
@@ -23,25 +12,18 @@ import IntroFour from '../screens/Auth/Intro-Four/Intro-Four';
 import Login from '../screens/Auth/Login/Login';
 import OTP from '../screens/Auth/OTP/OTP';
 
-// Main App Screen (with bottom tabs)
+// Main App (Bottom Tabs)
 import BottomTabNavigator from './BottomTabNavigator';
 
-// Create stack navigator
+// ✅ No types
 const Stack = createNativeStackNavigator();
 
-/**
- * AppNavigator
- *
- * The main stack-based navigation for the app.
- * Includes onboarding/auth flow and then launches into the main tabs.
- */
 const AppNavigator = () => {
     return (
         <Stack.Navigator
-            screenOptions={{ headerShown: false }} // Hide headers for all screens
-            initialRouteName="Splace" // Optional: you can change this to conditionally load
+            screenOptions={{ headerShown: false }}
+            initialRouteName="Splace"
         >
-            {/* Onboarding / Auth Screens */}
             <Stack.Screen name="Splace" component={Splace} />
             <Stack.Screen name="Wellcome" component={AppWellcome} />
             <Stack.Screen name="IntroOne" component={IntroOne} />
@@ -50,8 +32,6 @@ const AppNavigator = () => {
             <Stack.Screen name="IntroFour" component={IntroFour} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="OTP" component={OTP} />
-
-            {/* Main App Navigation with Bottom Tabs */}
             <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
         </Stack.Navigator>
     );

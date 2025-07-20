@@ -13,9 +13,9 @@ const Colors = {
 };
 
 const Fonts = {
-    Regular: 'Inter-Regular',
-    Bold: 'Inter-Bold',
-    SemiBold: 'Inter-SemiBold',
+    Regular: 'Inter_18pt-Regular',
+    Bold: 'Inter_18pt-Bold',
+    SemiBold: 'Inter_18pt-SemiBold',
 };
 
 
